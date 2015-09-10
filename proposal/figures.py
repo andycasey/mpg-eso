@@ -113,9 +113,6 @@ def giant_selection(ax=None):
     return fig
 
 
-
-
-
 def vphas_dr2_g():
 
     fig, ax = plt.subplots(figsize=(12, 4))
@@ -172,15 +169,72 @@ def vphas_dr2_g():
     return fig
 
 
+
+def irac_metallicities(ax=None):
+
+    if ax is None:
+        fig, ax = plt.subplots()
+    else:
+        fig = ax.figure
+
+    kepler = Table.read("data.fits.gz")
+
+    # Scatter points of all stars coloured by logg
+    x = kepler["kic_gmag_01"] - kepler["kic_kmag_01"]
+    y = kepler["kic_gmag_01"] - kepler["kic_d51mag"]
+    
+    probable_giant = \
+        (y > (0.1 * x - 0.18)) * \
+        ((0.1 * x + 0.10) > y) * \
+        (y > -0.08 * x + 0.46)
+
+    #wcolour1_2_01 - (TEFF*7.26973751e-5 -4.38638341e-01)
+
+    x = kepler["w1mpro_01"] - kepler["w2mpro_01"]
+    x -= kepler["TEFF"] * 7.26973751e-5 - 4.38638341e-01
+
+    dwarfs = ~probable_giant * (kepler["kic_feh_01"] > -1)
+    #ax.scatter(x[dwarfs], kepler["kic_feh_01"][dwarfs],
+    #    marker="s", facecolor="#CCCCCC")
+
+    scat = ax.scatter(x[probable_giant], kepler["FE_H"][probable_giant],
+        c=kepler["kic_teff_01"][probable_giant])#, s=50, lw=1.5)
+
+    # Do temperature correction
+
+    cbar = plt.colorbar(scat)
+    cbar.set_label(r"$T_{\rm eff}$ [K]")
+
+    ax.set_ylabel(r"${\rm [Fe/H]}$")
+    ax.set_xlabel(r"$W_1 - W_2$")
+
+    ax.set_xlim(-0.3, 0.2)
+    ax.set_xlim(-0.2, 0.2)
+    ax.set_ylim(-2.5, 0.5)
+    ax.xaxis.set_major_locator(MaxNLocator(6))
+    ax.yaxis.set_major_locator(MaxNLocator(6))
+
+    fig.tight_layout()
+
+    return fig
+
+
+
 if __name__ == "__main__":
+
+    f = irac_metallicities()
+    f.savefig("wise-metallicity.pdf")
+    raise a
 
     figures = {
         "filter-response.pdf": filter_response,
         "giant-selection.pdf": giant_selection,
+        "wise-metallicity.pdf": irac_metallicities,
         "vphas-g.pdf": vphas_dr2_g
     }
 
     for filename, function in figures.items():
         fig = function()
         fig.savefig(filename)
+        print("Created {}".format(filename))
 
