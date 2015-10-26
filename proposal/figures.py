@@ -131,7 +131,7 @@ def vphas_dr2_g():
         [40, 10, 10, -10, -10, -200, -200, -10, -10,  10, 10, 40],
         [ 5,  5, 10,  10,   5,    5,   -5,  -5, -10, -10, -5, -5],
         facecolor="#cccccc", edgecolor="#cccccc", zorder=-1,
-        label="Planned survey area")
+        label="VPHAS Planned")
 
     # Load the dr2 exposures.
     vphas = Table.read("vphas-dr2-ugr-exposures.csv")
@@ -139,7 +139,7 @@ def vphas_dr2_g():
 
     # Draw our survey area.
     ax.plot([10, -10, -10, 10, 10], [5, 5, -5, -5, 5], c="k", lw=2, zorder=1,
-        label="Proposed Observations")
+        label="Our Proposed Observations")
 
     # Draw each tile
     for i, field in enumerate(vphas_g):
@@ -155,7 +155,7 @@ def vphas_dr2_g():
         l, b = c.galactic.l.value, c.galactic.b.value
         l[l > 180] -= 360
 
-        kwd = {} if i > 0 else {"label": r"DR2 ($g$-band)"}
+        kwd = {} if i > 0 else {"label": r"VPHAS DR2 ($g$-band)"}
         ax.fill(l, b, facecolor="#0874D4", lw=0.5, **kwd)
         
     ax.set_xlim(40, -40)
@@ -225,14 +225,6 @@ def irac_metallicities(ax=None):
 
 
 if __name__ == "__main__":
-
-    g = vphas_dr2_g()
-    g.savefig("vphas-g.pdf")
-    raise a
-
-    f = irac_metallicities()
-    f.savefig("wise-metallicity.pdf")
-    raise a
 
     figures = {
         "filter-response.pdf": filter_response,
