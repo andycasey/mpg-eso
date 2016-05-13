@@ -17,4 +17,3 @@ constraint_moon_angular_distance: 30
 
 det_explevel: 20000
 det_read_clkid: 1x1
-seq_nexpo: 3

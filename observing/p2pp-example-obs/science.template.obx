@@ -1,6 +1,6 @@
 IMPEX.VERSION "2.0"
-name                             "{ob_name}"
-userComments                     "{user_comments}"
+name                             "{ob_name:s}"
+userComments                     "{user_comments:s}"
 InstrumentComments               ""
 userPriority                     "1"
 type                             "O"
@@ -14,41 +14,41 @@ type                             "O"
 
 
 
-TARGET.NAME                      "{target_name}"
+TARGET.NAME                      "{target_name:s}"
 propRA                           "{target_propra:.6f}"
 propDec                          "{target_propdec:.6f}"
 diffRA                           "{target_diffra:.6f}"
 diffDec                          "{target_diffdec:.6f}"
-equinox                          "{target_equinox}"
-epoch                            "{target_epoch:.f}"
-ra                               " {target_ra}"
-dec                              " {target_dec}"
+equinox                          "{target_equinox:s}"
+epoch                            "{target_epoch:.0f}"
+ra                               " {target_ra:s}"
+dec                              " {target_dec:s}"
 objectClass                      ""
 
 
-CONSTRAINT.SET.NAME              "{constraint_name}"
+CONSTRAINT.SET.NAME              "{constraint_name:s}"
 seeing                           "{constraint_seeing:.1f}"
-sky_transparency                 "{constraint_sky_transparency}"
+sky_transparency                 "{constraint_sky_transparency:s}"
 air_mass                         "{constraint_air_mass:.1f}"
 fractional_lunar_illumination    "{constraint_fractional_lunar_illumination:.1f}"
 moon_angular_distance            "{constraint_moon_angular_distance:.0f}"
 
 
-OBSERVATION.DESCRIPTION.NAME "{observation_description_name}"
+OBSERVATION.DESCRIPTION.NAME "{observation_description_name:s}"
 instrument "WFI"
 
 
 
 
-ACQUISITION.TEMPLATE.NAME "{acquisition_template_name}"
+ACQUISITION.TEMPLATE.NAME "WFI_img_acq_Preset"
 TEL.AG.START        "T"
 TEL.PRESET.NEW      "T"
-INS.FILT1.NAME      "{ins_filt_name}"
+INS.FILT1.NAME      "{ins_filter_name:s}"
 
 
 TEMPLATE.NAME "WFI_img_obs_Dither"
 DET.WIN1.UIT1             "{det_win1_uit1:.0f}"
-DET.READ.CLKIND           "{det_win1_clkid}"
+DET.READ.CLKIND           "{det_read_clkid:s}"
 SEQ.NEXPO                 "{seq_nexpo:.0f}"
 TEL.TARG.OFFSETALPHA      "0.0"
 TEL.TARG.OFFSETDELTA      "0.0"
@@ -57,7 +57,7 @@ TEL.TARG.INITOFFSETALPHA  "0.0"
 TEL.TARG.INITOFFSETDELTA  "0.0"
 TEL.COMBINED.OFFSET       "T"
 TEL.RETURN                "T"
-INS.FILT1.NAME            "{ins_filt_name}"
+INS.FILT1.NAME            "{ins_filter_name:s}"
 DPR.TYPE                  "OBJECT"
 
 
