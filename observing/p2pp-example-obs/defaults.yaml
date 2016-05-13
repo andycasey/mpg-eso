@@ -1,0 +1,20 @@
+target_name: No name
+target_ra:  00:00:00.000
+target_dec:  00:00:00.000
+target_propra: 0
+target_propdec: 0
+target_diffra: 0
+target_diffdec: 0
+target_equinox: J2000
+target_epoch: 2000
+
+constraint_name: No name
+constraint_seeing: 0
+constraint_air_mass: 0
+constraint_sky_transparency: Photometric
+constraint_fractional_lunar_illumination: 1.0
+constraint_moon_angular_distance: 30
+
+det_explevel: 20000
+det_read_clkid: 1x1
+seq_nexpo: 3

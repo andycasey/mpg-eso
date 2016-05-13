@@ -1,0 +1,63 @@
+IMPEX.VERSION "2.0"
+name                             "{ob_name}"
+userComments                     "{user_comments}"
+InstrumentComments               ""
+userPriority                     "1"
+type                             "O"
+
+
+
+
+
+
+
+
+
+
+TARGET.NAME                      "{target_name}"
+propRA                           "{target_propra:.6f}"
+propDec                          "{target_propdec:.6f}"
+diffRA                           "{target_diffra:.6f}"
+diffDec                          "{target_diffdec:.6f}"
+equinox                          "{target_equinox}"
+epoch                            "{target_epoch:.f}"
+ra                               " {target_ra}"
+dec                              " {target_dec}"
+objectClass                      ""
+
+
+CONSTRAINT.SET.NAME              "{constraint_name}"
+seeing                           "{constraint_seeing:.1f}"
+sky_transparency                 "{constraint_sky_transparency}"
+air_mass                         "{constraint_air_mass:.1f}"
+fractional_lunar_illumination    "{constraint_fractional_lunar_illumination:.1f}"
+moon_angular_distance            "{constraint_moon_angular_distance:.0f}"
+
+
+OBSERVATION.DESCRIPTION.NAME "{observation_description_name}"
+instrument "WFI"
+
+
+
+
+ACQUISITION.TEMPLATE.NAME "{acquisition_template_name}"
+TEL.AG.START        "T"
+TEL.PRESET.NEW      "T"
+INS.FILT1.NAME      "{ins_filt_name}"
+
+
+TEMPLATE.NAME "WFI_img_obs_Dither"
+DET.WIN1.UIT1             "{det_win1_uit1:.0f}"
+DET.READ.CLKIND           "{det_win1_clkid}"
+SEQ.NEXPO                 "{seq_nexpo:.0f}"
+TEL.TARG.OFFSETALPHA      "0.0"
+TEL.TARG.OFFSETDELTA      "0.0"
+TEL.TARG.AUTODITHER       "F"
+TEL.TARG.INITOFFSETALPHA  "0.0"
+TEL.TARG.INITOFFSETDELTA  "0.0"
+TEL.COMBINED.OFFSET       "T"
+TEL.RETURN                "T"
+INS.FILT1.NAME            "{ins_filt_name}"
+DPR.TYPE                  "OBJECT"
+
+

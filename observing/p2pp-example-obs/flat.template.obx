@@ -1,0 +1,49 @@
+IMPEX.VERSION "2.0"
+name                             "{ob_name}"
+userComments                     "{user_comments}"
+InstrumentComments               ""
+userPriority                     "1"
+type                             "O"
+
+
+
+
+
+
+
+
+
+
+TARGET.NAME                      "{target_name}"
+propRA                           "{target_propra:.6f}"
+propDec                          "{target_propdec:.6f}"
+diffRA                           "{target_diffra:.6f}"
+diffDec                          "{target_diffdec:.6f}"
+equinox                          "{target_equinox}"
+epoch                            "{target_epoch:.1f}"
+ra                               "{target_ra}"
+dec                              "{target_dec}"
+objectClass                      ""
+
+
+CONSTRAINT.SET.NAME              "{constraint_name}"
+seeing                           "{constraint_seeing:.1f}"
+sky_transparency                 "{constraint_sky_transparency}"
+air_mass                         "{constraint_air_mass:.1f}"
+fractional_lunar_illumination    "{constraint_fractional_lunar_illumination:.1f}"
+moon_angular_distance            "{constraint_moon_angular_distance:.0f}"
+
+
+OBSERVATION.DESCRIPTION.NAME "{observation_description_name}"
+instrument "WFI"
+
+
+
+
+TEMPLATE.NAME "{template_name}"
+DET.EXPLEVEL         "{det_explevel:.0f}"
+DET.READ.CLKIND      "{det_read_clkid}"
+SEQ.NEXPO            "{seq_nexpo:.0f}"
+INS.FILT1.NAME       "{ins_filter_name}"
+
+
